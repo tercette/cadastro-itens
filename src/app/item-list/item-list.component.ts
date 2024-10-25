@@ -13,17 +13,12 @@ import { ItemService } from '../item.service';
   imports: [CommonModule, NzTableModule, NzButtonModule, NzCheckboxModule],
   templateUrl: './item-list.component.html',
   styleUrls: ['./item-list.component.scss'],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ItemListComponent implements OnInit {
   items: any[] = [];
 
-  constructor(
-    private itemService: ItemService,
-    private modal: NzModalService,
-    private message: NzMessageService
-  ) {}
-
+  constructor(private itemService: ItemService) {}
   ngOnInit(): void {
     this.loadItems();
   }
@@ -37,17 +32,8 @@ export class ItemListComponent implements OnInit {
   }
 
   onDelete(index: number): void {
-    this.modal.confirm({
-      nzTitle: 'Você tem certeza que deseja excluir este item?',
-      nzOkText: 'Sim',
-      nzOkType: 'primary',
-      nzOnOk: () => {
-        this.itemService.deleteItem(index);
-        this.loadItems();
-        this.message.success('Item excluído com sucesso');
-      },
-      nzCancelText: 'Não'
-    });
+    this.itemService.deleteItem(index);
+    this.loadItems(); // Atualiza a lista após deletar um item
   }
 
   onAdd(): void {

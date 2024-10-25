@@ -12,12 +12,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of basicTable.data; let i = index">
+      <tr *ngFor="let item of items; let i = index">
         <td>{{ item.nome }}</td>
         <td>{{ item.categoria }}</td>
-        <td>
-          <nz-checkbox [ngModel]="item.ativo" disabled></nz-checkbox>
-        </td>
+        <td>{{ item.ativo ? 'Sim' : 'Não' }}</td>
         <td>{{ item.quantidade !== null ? item.quantidade : '-' }}</td>
         <td>{{ item.preco !== null ? 'R$ ' + item.preco : '-' }}</td>
         <td>
