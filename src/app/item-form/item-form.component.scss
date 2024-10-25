@@ -1,0 +1,16 @@
+.form-container {
+  max-width: 600px;  // Defina uma largura máxima para o formulário
+  margin: 0 auto;    // Centraliza o formulário
+  padding: 20px;     // Adiciona um espaçamento interno
+  background-color: #f9f9f9; // Cor de fundo suave
+  border-radius: 8px; // Arredonda as bordas
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); // Adiciona uma leve sombra
+}
+
+nz-form-item {
+  margin-bottom: 16px; // Espaço entre os itens do formulário
+}
+
+button[nz-button] {
+  margin-right: 8px; // Espaço entre os botões
+}
