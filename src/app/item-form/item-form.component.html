@@ -9,7 +9,7 @@
   <nz-form-item>
     <nz-form-label [nzSpan]="6" nzFor="categoria" nzRequired>Categoria</nz-form-label>
     <nz-form-control [nzSpan]="14" nzErrorTip="Por favor, selecione uma categoria">
-      <nz-select formControlName="categoria" id="categoria" nzAllowClear nzPlaceHolder="Selecione uma categoria">
+      <nz-select formControlName="categoria" id="categoria" nzPlaceHolder="Selecione uma categoria">
         <nz-option nzLabel="Automóvel" nzValue="Automóvel"></nz-option>
         <nz-option nzLabel="Caminhão" nzValue="Caminhão"></nz-option>
         <nz-option nzLabel="Avião" nzValue="Avião"></nz-option>
@@ -17,11 +17,10 @@
     </nz-form-control>
   </nz-form-item>
 
-
   <nz-form-item>
     <nz-form-label [nzSpan]="6" nzFor="ativo">Ativo</nz-form-label>
     <nz-form-control [nzSpan]="14">
-      <nz-checkbox formControlName="ativo" id="ativo">Produto Ativo</nz-checkbox>
+      <label nz-checkbox formControlName="ativo">Produto Ativo</label>
     </nz-form-control>
   </nz-form-item>
 

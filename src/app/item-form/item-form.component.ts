@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
-import { NzSelectModule } from 'ng-zorro-antd/select'; // Importante para o campo de seleção
+import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { ActivatedRoute, Router } from '@angular/router';
 import { ItemService } from '../item.service';
 
 @Component({
@@ -15,12 +15,13 @@ import { ItemService } from '../item.service';
     ReactiveFormsModule,
     NzFormModule,
     NzInputModule,
-    NzSelectModule, // Assegure que está presente aqui
+    NzSelectModule,
     NzCheckboxModule,
     NzButtonModule
   ],
   templateUrl: './item-form.component.html',
-  styleUrls: ['./item-form.component.scss']
+  styleUrls: ['./item-form.component.scss'],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ItemFormComponent implements OnInit {
   itemForm: FormGroup;
@@ -36,8 +37,8 @@ export class ItemFormComponent implements OnInit {
       nome: ['', [Validators.required, Validators.maxLength(70)]],
       categoria: ['', Validators.required],
       ativo: [false],
-      quantidade: [{ value: '', disabled: true }],
-      preco: [{ value: '', disabled: true }]
+      quantidade: [''],
+      preco: ['']
     });
   }
 
@@ -48,10 +49,6 @@ export class ItemFormComponent implements OnInit {
         const item = this.itemService.getItems()[this.editIndex];
         if (item) {
           this.itemForm.patchValue(item);
-          if (item.ativo) {
-            this.itemForm.get('quantidade')?.enable();
-            this.itemForm.get('preco')?.enable();
-          }
         }
       }
     });
