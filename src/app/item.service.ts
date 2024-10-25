@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class ItemService {
-  private storageKey = 'cadastro-itens';
+  private storageKey = 'items';
 
   constructor() {}
 
@@ -13,29 +13,21 @@ export class ItemService {
     return items ? JSON.parse(items) : [];
   }
 
-  saveItems(items: any[]): void {
-    localStorage.setItem(this.storageKey, JSON.stringify(items));
-  }
-
   addItem(item: any): void {
     const items = this.getItems();
     items.push(item);
-    this.saveItems(items);
+    localStorage.setItem(this.storageKey, JSON.stringify(items));
   }
 
   updateItem(index: number, item: any): void {
     const items = this.getItems();
-    if (index >= 0 && index < items.length) {
-      items[index] = item;
-      this.saveItems(items);
-    }
+    items[index] = item;
+    localStorage.setItem(this.storageKey, JSON.stringify(items));
   }
 
   deleteItem(index: number): void {
     const items = this.getItems();
-    if (index >= 0 && index < items.length) {
-      items.splice(index, 1);
-      this.saveItems(items);
-    }
+    items.splice(index, 1);
+    localStorage.setItem(this.storageKey, JSON.stringify(items));
   }
 }
