@@ -2,17 +2,13 @@
   <nz-sider nzCollapsible nzWidth="200px" nzTheme="dark">
     <div class="logo">Cadastro de Itens</div>
     <nz-menu nzTheme="dark" nzMode="inline">
-      <nz-menu-item nzSelected>
-        <a [routerLink]="['/list']">
-          <span>📋</span>
-          <span>Listagem</span>
-        </a>
+      <nz-menu-item routerLink="/list">
+        <span>📋</span>
+        <span>Listagem</span>
       </nz-menu-item>
-      <nz-menu-item>
-        <a [routerLink]="['/form']">
-          <span>➕</span>
-          <span>Cadastro</span>
-        </a>
+      <nz-menu-item routerLink="/form">
+        <span>➕</span>
+        <span>Cadastro</span>
       </nz-menu-item>
     </nz-menu>
   </nz-sider>
