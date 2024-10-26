@@ -1,10 +1,10 @@
 
 
 
-#Imagem da tela de cadastro
+# Imagem da tela de cadastro
 https://drive.google.com/file/d/1fEEF-ADweJ9y0kHsPGtwAU83Oqzw09-i/view?usp=sharing
 
-#imagem da tela de Listagem
+# imagem da tela de Listagem
 https://drive.google.com/file/d/1rTaZ7RiuBlhGB5wo7jVAXtjJ9MY3qtRz/view?usp=sharing
 
 # CadastroItens
