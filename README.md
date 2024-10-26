@@ -32,7 +32,7 @@ Responsividade: A aplicação se adapta a diferentes tamanhos de tela, incluindo
 
 NODE versao: v18.17.0
 
-Angular 16: Framework principal usado para desenvolvimento da aplicação.
+Angular 16: Framework principal usado para desenvolvimento da aplicação ja utilizando stand alone Components.
 
 NG ZORRO: Biblioteca de componentes baseada no Ant Design para Angular, utilizada para a interface do usuário.
 
