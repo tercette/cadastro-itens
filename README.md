@@ -1,3 +1,5 @@
+# Download o raw folder para uma melhor visualizacao desta documentacao.
+
 # CadastroItens
 
 Este projeto é uma aplicação web para o cadastro e gerenciamento de itens, desenvolvida com Angular CLI versão 16.2.16. A aplicação permite adicionar, editar, excluir e listar itens, com suporte à validação de formulários e armazenamento de dados no LocalStorage.
