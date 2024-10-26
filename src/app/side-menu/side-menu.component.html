@@ -1,17 +1,22 @@
 <nz-layout>
-  <nz-sider nzCollapsible nzWidth="200px" nzTheme="dark">
-    <div class="logo">Cadastro de Itens</div>
-    <nz-menu nzTheme="dark" nzMode="inline">
-      <nz-menu-item routerLink="/list">
-        <span>📋</span>
-        <span>Listagem</span>
-      </nz-menu-item>
-      <nz-menu-item routerLink="/form">
-        <span>➕</span>
-        <span>Cadastro</span>
-      </nz-menu-item>
-    </nz-menu>
+  <div *ngIf="showHamburger" class="hamburger-menu">
+    <button nz-button nzType="primary" (click)="openDrawer()">
+      <i nz-icon nzType="menu" nzTheme="outline"></i>
+    </button>
+  </div>
+
+  <nz-sider
+    *ngIf="!showHamburger || !isCollapsed"
+    [nzWidth]="400"
+    [nzCollapsedWidth]="200"
+    nzTheme="dark"
+    nzCollapsible
+    (nzCollapse)="onCollapse()"
+    [nzCollapsed]="isCollapsed"
+  >
+    <app-side-menu-sidebar></app-side-menu-sidebar>
   </nz-sider>
+
   <nz-layout>
     <nz-content>
       <router-outlet></router-outlet>

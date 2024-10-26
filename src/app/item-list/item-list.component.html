@@ -3,16 +3,7 @@
     Adicionar Novo Item
   </button>
 
-  <nz-table
-    [nzData]="displayedItems"
-    nzBordered
-    [nzPageSize]="pageSize"
-    [nzTotal]="items.length"
-    [nzPageIndex]="pageIndex"
-    [nzShowPagination]="true"
-    [nzFrontPagination]="false"
-    (nzPageIndexChange)="onPageChange($event)"
-  >
+  <nz-table [nzData]="items" nzBordered>
     <thead>
       <tr>
         <th>Nome</th>
@@ -24,16 +15,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of displayedItems; let i = index">
-        <td>{{ item.nome | nullToNA }}</td>
-        <td>{{ item.categoria | nullToNA }}</td>
+      <tr *ngFor="let item of items; let i = index">
+        <td>{{ item.nome || 'N/A' }}</td>
+        <td>{{ item.categoria || 'N/A' }}</td>
         <td>
           <nz-tag [nzColor]="item.ativo ? 'green' : 'red'">
             {{ item.ativo ? 'Sim' : 'Não' }}
           </nz-tag>
         </td>
-        <td>{{ item.quantidade | nullToNA }}</td>
-        <td>{{ item.preco !== null ? (item.preco | currency:'BRL') : 'N/A' }}</td>
+        <td>{{ item.quantidade !== null ? item.quantidade : 'N/A' }}</td>
+        <td>{{ item.preco !== null ? (item.preco | currency: 'BRL') : 'N/A' }}</td>
         <td>
           <div class="action-buttons">
             <button nz-button nzType="link" (click)="onEdit(i)">Editar</button>

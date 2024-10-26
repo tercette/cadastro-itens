@@ -26,9 +26,9 @@ nz-form-item {
 
 .btn-wrapper {
   display: flex;
-  align-items: center;    /* Centraliza verticalmente */
-  justify-content: center; /* Centraliza horizontalmente */
-  gap: 8px; /* Espaço entre os botões */
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .item-form {
@@ -42,9 +42,7 @@ nz-form-item {
   }
 }
 
-/* Removida a classe .btn-center-text, pois não é mais necessária */
 
-/* Opcional: Adicionar espaçamento entre ícone e texto */
 .btn-wrapper button i[nz-icon] {
   margin-right: 8px;
 }

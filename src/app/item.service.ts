@@ -1,4 +1,3 @@
-// src/app/item.service.ts
 import { Injectable } from '@angular/core';
 import { Item } from './Types/models';
 

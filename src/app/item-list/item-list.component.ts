@@ -26,7 +26,7 @@ import { NullToNAPipe } from '../null-to-na.pipe';
 export class ItemListComponent implements OnInit {
   items: any[] = [];
   displayedItems: any[] = [];
-  pageSize = 10;
+  pageSize = 5;
   pageIndex = 1;
 
   constructor(
@@ -69,8 +69,15 @@ export class ItemListComponent implements OnInit {
       nzOkType: 'dashed',
       nzOnOk: () => {
         this.itemService.removeItem(globalIndex);
-        this.loadItems();
+        this.loadItems(); // Recarregar itens após a exclusão
         this.message.success('Item excluído com sucesso.');
+
+        // Se o número de itens na página atual for zero após a exclusão,
+        // volte para a página anterior
+        if (this.displayedItems.length === 0 && this.pageIndex > 1) {
+          this.pageIndex--;
+          this.updateDisplayedItems();
+        }
       },
       nzCancelText: 'Não'
     });

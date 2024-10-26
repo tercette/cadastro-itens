@@ -12,7 +12,7 @@ import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { provideNgxMask } from 'ngx-mask';
 import { ItemService } from '../item.service';
-import { NullToNAPipe } from '../null-to-na.pipe'; // Importação direta do pipe standalone
+import { NullToNAPipe } from '../null-to-na.pipe';
 import { Item } from '../Types/models';
 
 @Component({
@@ -58,7 +58,6 @@ export class ItemFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Verificar se está no modo de edição
     this.route.queryParams.subscribe(params => {
       if (params['index'] !== undefined) {
         this.editIndex = +params['index'];
@@ -73,7 +72,6 @@ export class ItemFormComponent implements OnInit {
       }
     });
 
-    // Monitorar mudanças no campo 'ativo' para aplicar validações condicionais
     this.itemForm.get('ativo')?.valueChanges.subscribe(ativo => {
       if (ativo) {
         this.enableConditionalFields();
@@ -83,7 +81,6 @@ export class ItemFormComponent implements OnInit {
     });
   }
 
-  // Habilitar campos condicionais e aplicar validadores
   enableConditionalFields(): void {
     const quantidadeControl = this.itemForm.get('quantidade');
     const precoControl = this.itemForm.get('preco');
@@ -98,7 +95,6 @@ export class ItemFormComponent implements OnInit {
     precoControl?.updateValueAndValidity();
   }
 
-  // Desabilitar campos condicionais e remover validadores
   disableConditionalFields(): void {
     const quantidadeControl = this.itemForm.get('quantidade');
     const precoControl = this.itemForm.get('preco');
@@ -116,25 +112,20 @@ export class ItemFormComponent implements OnInit {
     precoControl?.updateValueAndValidity();
   }
 
-  // Validador personalizado para o campo monetário
   currencyValidator(control: AbstractControl) {
     const value = control.value;
-    // Regex para validar formato monetário, ex: 1.234,56
     const valid = /^(\d{1,3}(?:\.\d{3})*|\d+)(\,\d{2})?$/.test(value);
     return valid ? null : { currency: true };
   }
 
-  // Função de submissão do formulário
   onSave(): void {
     if (this.itemForm.valid) {
       this.isSubmitting = true;
       const item: Item = this.itemForm.value;
       if (this.editIndex !== null) {
-        // Atualizar item existente
         this.itemService.updateItem(this.editIndex, item);
         this.message.success('Item atualizado com sucesso');
       } else {
-        // Adicionar novo item
         this.itemService.addItem(item);
         this.message.success('Item adicionado com sucesso');
       }
@@ -145,12 +136,10 @@ export class ItemFormComponent implements OnInit {
     }
   }
 
-  // Função de cancelamento
   onCancel(): void {
     this.router.navigate(['/list']);
   }
 
-  // Função para validar todos os campos do formulário
   validateAllFormFields(formGroup: FormGroup) {
     Object.keys(formGroup.controls).forEach(field => {
       const control = formGroup.get(field);
