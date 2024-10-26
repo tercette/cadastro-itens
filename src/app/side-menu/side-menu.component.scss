@@ -1,4 +1,3 @@
-// Estiliza a logo
 .logo {
   height: 60px;
   color: white;
@@ -9,21 +8,18 @@
   font-weight: bold;
 }
 
-// Estiliza o Sider (Menu lateral)
 nz-sider {
   background-color: #001529;
   color: white;
   min-height: 100vh;
 }
 
-// Estiliza o conteúdo principal
 nz-content {
   padding: 24px;
   background: #f0f2f5;
   min-height: 100vh;
 }
 
-// Estilo dos itens do menu
 nz-menu-item {
   display: flex;
   align-items: center;

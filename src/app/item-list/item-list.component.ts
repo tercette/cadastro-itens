@@ -32,8 +32,8 @@ export class ItemListComponent implements OnInit {
   }
 
   onDelete(index: number): void {
-    this.itemService.deleteItem(index);
-    this.loadItems(); // Atualiza a lista após deletar um item
+    this.itemService.removeItem(index);
+    this.loadItems();
   }
 
   onAdd(): void {
