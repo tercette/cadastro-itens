@@ -1,4 +1,3 @@
-# Download o raw folder para uma melhor visualizacao desta documentacao.
 
 # CadastroItens
 
