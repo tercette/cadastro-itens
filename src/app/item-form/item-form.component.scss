@@ -1,3 +1,5 @@
+/* src/app/item-form/item-form.component.scss */
+
 .form-container {
   max-width: 600px;
   margin: 0 auto;
@@ -22,8 +24,27 @@ nz-form-item {
   }
 }
 
-button[nz-button] {
-  margin-right: 10px;
-  padding: 8px 16px;
-  font-size: 16px;
+.btn-wrapper {
+  display: flex;
+  align-items: center;    /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  gap: 8px; /* Espaço entre os botões */
+}
+
+.item-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .item-form {
+    padding: 0 16px;
+  }
+}
+
+/* Removida a classe .btn-center-text, pois não é mais necessária */
+
+/* Opcional: Adicionar espaçamento entre ícone e texto */
+.btn-wrapper button i[nz-icon] {
+  margin-right: 8px;
 }

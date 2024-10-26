@@ -1,4 +1,6 @@
+// src/app/item.service.ts
 import { Injectable } from '@angular/core';
+import { Item } from './Types/models';
 
 @Injectable({
   providedIn: 'root'
@@ -6,28 +8,31 @@ import { Injectable } from '@angular/core';
 export class ItemService {
   private storageKey = 'items';
 
-  constructor() {}
+  constructor() { }
 
-  getItems(): any[] {
-    const items = localStorage.getItem(this.storageKey);
-    return items ? JSON.parse(items) : [];
+  getItems(): Item[] {
+    const itemsJson = localStorage.getItem(this.storageKey);
+    return itemsJson ? JSON.parse(itemsJson) : [];
   }
-
-  addItem(item: any): void {
+  addItem(item: Item): void {
     const items = this.getItems();
     items.push(item);
     localStorage.setItem(this.storageKey, JSON.stringify(items));
   }
 
-  updateItem(index: number, item: any): void {
+  updateItem(index: number, updatedItem: Item): void {
     const items = this.getItems();
-    items[index] = item;
-    localStorage.setItem(this.storageKey, JSON.stringify(items));
+    if (items[index]) {
+      items[index] = updatedItem;
+      localStorage.setItem(this.storageKey, JSON.stringify(items));
+    }
   }
 
-  deleteItem(index: number): void {
+  removeItem(index: number): void {
     const items = this.getItems();
-    items.splice(index, 1);
-    localStorage.setItem(this.storageKey, JSON.stringify(items));
+    if (items[index]) {
+      items.splice(index, 1);
+      localStorage.setItem(this.storageKey, JSON.stringify(items));
+    }
   }
 }
