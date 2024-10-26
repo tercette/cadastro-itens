@@ -28,6 +28,9 @@ Validação de formulários: O formulário inclui validação para campos obriga
 Responsividade: A aplicação se adapta a diferentes tamanhos de tela, incluindo um menu colapsável para dispositivos móveis.
 
 ## Tecnologias Utilizadas
+## Instale a versao 18.17.0 do NODE para rodar o ambiente sem falhas
+
+NODE versao: v18.17.0
 
 Angular 16: Framework principal usado para desenvolvimento da aplicação.
 
