@@ -1,13 +1,18 @@
-<!-- src/app/item-list/item-list.component.html -->
 <div class="listagem-container">
-
-  <!-- Botão para Adicionar Novo Item -->
   <button nz-button nzType="primary" (click)="onAdd()" class="add-button">
     Adicionar Novo Item
   </button>
 
-  <!-- Tabela de Itens -->
-  <nz-table #basicTable [nzData]="items" nzBordered>
+  <nz-table
+    [nzData]="displayedItems"
+    nzBordered
+    [nzPageSize]="pageSize"
+    [nzTotal]="items.length"
+    [nzPageIndex]="pageIndex"
+    [nzShowPagination]="true"
+    [nzFrontPagination]="false"
+    (nzPageIndexChange)="onPageChange($event)"
+  >
     <thead>
       <tr>
         <th>Nome</th>
@@ -19,7 +24,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of items; let i = index">
+      <tr *ngFor="let item of displayedItems; let i = index">
         <td>{{ item.nome | nullToNA }}</td>
         <td>{{ item.categoria | nullToNA }}</td>
         <td>
