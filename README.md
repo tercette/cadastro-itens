@@ -55,9 +55,10 @@ src/
 └── main.ts                      # Arquivo principal para bootstrap do Angular
 
 ## Detalhamento das Funcionalidades
-Cadastro e Edição de Itens
 
-O formulário de cadastro de itens possui validação nos seguintes campos:
+## Cadastro e Edição de Itens
+
+## O formulário de cadastro de itens possui validação nos seguintes campos:
 
 Nome: Campo obrigatório, com tamanho máximo de 70 caracteres.
 
@@ -67,16 +68,16 @@ Quantidade e Preço: Campos obrigatórios somente se o item estiver marcado como
 
 Ativo: Campo booleano (checkbox) para indicar se o item está ativo.
 
-Listagem de Itens
+## Listagem de Itens
 
 A listagem exibe os itens em uma tabela com as colunas: Nome, Categoria, Ativo, Quantidade, Preço e Ações.
 
-Ações disponíveis:
+## Ações disponíveis:
 
 Editar: Abre o formulário com os dados do item selecionado.
 Excluir: Exclui o item após confirmação.
 
-Responsividade
+## Responsividade
 
 A aplicação é responsiva, com layout ajustado para diferentes dispositivos:
 
