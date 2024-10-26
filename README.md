@@ -1,4 +1,12 @@
 
+
+
+#Imagem da tela de cadastro
+https://drive.google.com/file/d/1fEEF-ADweJ9y0kHsPGtwAU83Oqzw09-i/view?usp=sharing
+
+#imagem da tela de Listagem
+https://drive.google.com/file/d/1rTaZ7RiuBlhGB5wo7jVAXtjJ9MY3qtRz/view?usp=sharing
+
 # CadastroItens
 
 Este projeto é uma aplicação web para o cadastro e gerenciamento de itens, desenvolvida com Angular CLI versão 16.2.16. A aplicação permite adicionar, editar, excluir e listar itens, com suporte à validação de formulários e armazenamento de dados no LocalStorage.
