@@ -36,8 +36,12 @@
         <td>{{ item.preco !== null ? (item.preco | currency: 'BRL') : 'N/A' }}</td>
         <td>
           <div class="action-buttons">
-            <button nz-button nzType="link" (click)="onEdit(i)">Editar</button>
-            <button nz-button nzType="link" nzDanger (click)="onDelete(i)">Excluir</button>
+            <button nz-button nzType="default" nzShape="circle" nzSize="small" (click)="onEdit(i)">
+              <i nz-icon nzType="edit" nzTheme="outline"></i> Editar
+            </button>
+            <button nz-button nzType="default" nzShape="circle" nzSize="small" nzDanger (click)="onDelete(i)">
+              <i nz-icon nzType="delete" nzTheme="outline"></i> Excluir
+            </button>
           </div>
         </td>
       </tr>

@@ -46,7 +46,6 @@ export class SideMenuComponent implements OnInit {
 
   private updateMenuState(): void {
     this.showHamburger = window.innerWidth < 400;
-    console.log('Window width:', window.innerWidth, 'showHamburger:', this.showHamburger);
   }
 
   openDrawer(): void {
