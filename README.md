@@ -4,22 +4,22 @@
 # Imagem da tela de cadastro
 https://drive.google.com/file/d/1fEEF-ADweJ9y0kHsPGtwAU83Oqzw09-i/view?usp=sharing
 
-# imagem da tela de Listagem
+# Imagem da tela de Listagem
 https://drive.google.com/file/d/1rTaZ7RiuBlhGB5wo7jVAXtjJ9MY3qtRz/view?usp=sharing
 
-# imagem responsiva
+# Imagem responsiva
 https://drive.google.com/file/d/1UQIxIkF3g4VgabtopIfITxNI6PjM9ywu/view?usp=drive_link
 
-# validacoes
+# Validacoes
 https://drive.google.com/file/d/1NyEf3eaMFfXgaJuueyidbSy44P8Rj1VP/view?usp=drive_link
 
-# sidebar responsivo drawer
+# Sidebar responsivo drawer
 https://drive.google.com/file/d/1uUs_eoh1xAlw9DnXqDPT5_IeC8tD4W-1/view?usp=drive_link
 
-# persistencia no localStorage
+# Persistencia no localStorage
 https://drive.google.com/file/d/1w6CwTqUqYPegi5FfJRoqpNGlKT6bdGW-/view?usp=drive_link
 
-# Projeto CadastroItens
+# Projeto Cadastro Itens - Tarefa de processo de entrevistas
 
 Este projeto é uma aplicação web para o cadastro e gerenciamento de itens, desenvolvida com Angular CLI versão 16.2.16. A aplicação permite adicionar, editar, excluir e listar itens, com suporte à validação de formulários e armazenamento de dados no LocalStorage.
 
