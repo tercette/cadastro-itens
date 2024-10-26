@@ -1,5 +1,12 @@
-<div>
-  <button nz-button nzType="primary" (click)="onAdd()">Adicionar Novo Item</button>
+<!-- src/app/item-list/item-list.component.html -->
+<div class="listagem-container">
+
+  <!-- Botão para Adicionar Novo Item -->
+  <button nz-button nzType="primary" (click)="onAdd()" class="add-button">
+    Adicionar Novo Item
+  </button>
+
+  <!-- Tabela de Itens -->
   <nz-table #basicTable [nzData]="items" nzBordered>
     <thead>
       <tr>
@@ -13,14 +20,20 @@
     </thead>
     <tbody>
       <tr *ngFor="let item of items; let i = index">
-        <td>{{ item.nome }}</td>
-        <td>{{ item.categoria }}</td>
-        <td>{{ item.ativo ? 'Sim' : 'Não' }}</td>
-        <td>{{ item.quantidade !== null ? item.quantidade : '-' }}</td>
-        <td>{{ item.preco !== null ? 'R$ ' + item.preco : '-' }}</td>
+        <td>{{ item.nome | nullToNA }}</td>
+        <td>{{ item.categoria | nullToNA }}</td>
         <td>
-          <button nz-button nzType="link" (click)="onEdit(i)">Editar</button>
-          <button nz-button nzType="link" nzDanger (click)="onDelete(i)">Excluir</button>
+          <nz-tag [nzColor]="item.ativo ? 'green' : 'red'">
+            {{ item.ativo ? 'Sim' : 'Não' }}
+          </nz-tag>
+        </td>
+        <td>{{ item.quantidade | nullToNA }}</td>
+        <td>{{ item.preco !== null ? (item.preco | currency:'BRL') : 'N/A' }}</td>
+        <td>
+          <div class="action-buttons">
+            <button nz-button nzType="link" (click)="onEdit(i)">Editar</button>
+            <button nz-button nzType="link" nzDanger (click)="onDelete(i)">Excluir</button>
+          </div>
         </td>
       </tr>
     </tbody>
